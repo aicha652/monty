@@ -33,7 +33,8 @@ int main(int argc, char *argv[])
 			funct_opcode(&stack, line_number, opcode);
 		}
 	}
-	free(line);
+	if (line != NULL)
+		free(line);
 	free_stack(stack);
 	fclose(fptr);
 	exit(EXIT_SUCCESS);

@@ -13,6 +13,7 @@ void funct_opcode(stack_t **stack, unsigned int line_number, char *opcode)
 	instruction_t instruction[] = {
 		{"push", push_stack},
 		{"pall", print_stack},
+		{"pint", pint_stack},
 		{NULL, NULL}
 	};
 

@@ -41,5 +41,6 @@ typedef struct instruction_s
 void push_stack(stack_t **stack, unsigned int line_number);
 void print_stack(stack_t **stack, unsigned int line_number);
 void funct_opcode(stack_t **stack, unsigned int line_number, char *opcode);
+void pint_stack(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 #endif /* MONTY_H */
