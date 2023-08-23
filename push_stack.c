@@ -8,11 +8,19 @@
  */
 void push_stack(stack_t **stack, unsigned int line_number)
 {
+	char *arg = strtok(NULL, " \t\n");
 	stack_t *new;
+
+	if (arg == NULL || !isdigit(*arg))
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = line_number;
@@ -28,5 +36,4 @@ void push_stack(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new;
 		*stack = new;
 	}
-	return;
 }

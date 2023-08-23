@@ -25,6 +25,6 @@ void funct_opcode(stack_t **stack, unsigned int line_number, char *opcode)
 		}
 		i++;
 	}
-	dprintf(STDERR_FILENO, "L%u: unknown instruction %s", line_number, opcode);
+	dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }

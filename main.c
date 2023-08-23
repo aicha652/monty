@@ -2,7 +2,7 @@
 /**
  * main - main function
  * @argc: size of arguments
- * @argv[]: array of arguments
+ * @argv: array of arguments
  * Return: void
  */
 int main(int argc, char *argv[])
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	}
 	if (fptr == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&line, &sz, fptr) != -1)
@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 			funct_opcode(&stack, line_number, opcode);
 		}
 	}
+	free(line);
 	free_stack(stack);
 	fclose(fptr);
 	exit(EXIT_SUCCESS);

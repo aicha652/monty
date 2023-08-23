@@ -3,6 +3,7 @@
  * print_stack - function that prints
  * all the values on the stack
  * @stack: stack
+ * @line_number: line number in the file
  * Return: void function
  */
 void print_stack(stack_t **stack, unsigned int line_number)
@@ -10,7 +11,7 @@ void print_stack(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	while (*stack != NULL)
 	{
-		printf("%d\n",(*stack)->n);
+		printf("%d\n", (*stack)->n);
 		*stack = (*stack)->next;
 	}
 }
