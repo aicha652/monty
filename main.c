@@ -7,19 +7,18 @@
  */
 int main(int argc, char *argv[])
 {
-	FILE *fptr;
+	FILE *fptr = NULL;
 	char *line = NULL, *opcode = NULL;
 	size_t sz = 0;
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
-
-	fptr = fopen(argv[1], "r");
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
+	fptr = fopen(argv[1], "r");
 	if (fptr == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -28,13 +27,14 @@ int main(int argc, char *argv[])
 	while (getline(&line, &sz, fptr) != -1)
 	{
 		line_number++;
-		opcode = strtok(line, "\n\t\r ");
+		opcode = strtok(line, " \t\n");
 		if (opcode != NULL && opcode[0] != '#')
 		{
 			funct_opcode(&stack, line_number, opcode);
 		}
 	}
-	free(line);
+	if (line)
+		free(line);
 	free_stack(stack);
 	fclose(fptr);
 	exit(EXIT_SUCCESS);
