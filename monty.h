@@ -44,5 +44,6 @@ void funct_opcode(stack_t **stack, unsigned int line_number, char *opcode);
 void pint_stack(stack_t **stack, unsigned int line_number);
 void pop_stack(stack_t **stack, unsigned int line_number);
 void nop_stack(stack_t **stack, unsigned int line_number);
+void swap_stack(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 #endif /* MONTY_H */
