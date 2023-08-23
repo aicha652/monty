@@ -8,12 +8,13 @@
 void add_stack(stack_t **stack, unsigned int line_number)
 {
 	int count = 0, sum = 0;
-	stack_t *tmp;
+	stack_t *tmp, *link;
 
-	while (*stack != NULL)
+	link = *stack;
+	while (link != NULL)
 	{
 		count++;
-		*stack = (*stack)->next;
+		link = link->next;
 	}
 	if (count < 2)
 	{
