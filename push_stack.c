@@ -10,6 +10,7 @@ void push_stack(stack_t **stack, unsigned int line_number)
 {
 	char *arg = strtok(NULL, " \t\n");
 	stack_t *new;
+	int n;
 
 	if (arg == NULL || !isdigit(*arg))
 	{
@@ -23,7 +24,8 @@ void push_stack(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	new->n = line_number;
+	n = atoi(arg);
+	new->n = n;
 	new->prev = NULL;
 	if (*stack == NULL)
 	{
