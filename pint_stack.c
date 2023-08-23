@@ -3,7 +3,7 @@
  * pint_stack - function that  prints the
  * value at the top of the stack
  * @stack :stack
- * line_number: line number in the file
+ * @line_number: line number in the file
  * Return: void
  */
 void pint_stack(stack_t **stack, unsigned int line_number)
