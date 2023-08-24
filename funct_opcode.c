@@ -19,6 +19,7 @@ void funct_opcode(stack_t **stack, unsigned int line_number, char *opcode)
 		{"add", add_stack},
 		{"nop", nop_stack},
 		{"sub", sub_stack},
+		{"div", div_stack},
 		{NULL, NULL}
 	};
 
