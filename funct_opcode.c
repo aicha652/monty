@@ -23,6 +23,7 @@ void funct_opcode(stack_t **stack, unsigned int line_number, char *opcode)
 		{"mul", mul_stack},
 		{"mod", mod_stack},
 		{"pchar", pchar_stack},
+		{"pstr", pstr_stack},
 		{NULL, NULL}
 	};
 
