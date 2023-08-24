@@ -48,5 +48,7 @@ void swap_stack(stack_t **stack, unsigned int line_number);
 void add_stack(stack_t **stack, unsigned int line_number);
 void sub_stack(stack_t **stack, unsigned int line_number);
 void div_stack(stack_t **stack, unsigned int line_number);
+void mul_stack(stack_t **stack, unsigned int line_number);
+void mod_stack(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 #endif /* MONTY_H */
