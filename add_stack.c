@@ -26,4 +26,5 @@ void add_stack(stack_t **stack, unsigned int line_number)
 	tmp = *stack;
 	*stack = tmp->next;
 	(*stack)->n = sum;
+	free(tmp);
 }
