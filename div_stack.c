@@ -32,5 +32,6 @@ void div_stack(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	*stack = temp->next;
 	(*stack)->n = div;
+	(*stack)->prev = NULL;
 	free(temp);
 }

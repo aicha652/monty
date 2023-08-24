@@ -27,5 +27,6 @@ void sub_stack(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	*stack = temp->next;
 	(*stack)->n = abs(sub);
+	(*stack)->prev = NULL;
 	free(temp);
 }
