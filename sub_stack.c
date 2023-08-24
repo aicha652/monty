@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * sub_stack - function that subtracts the top element 
+ * sub_stack - function that subtracts the top element
  * of the stack from the second top element of the stack
  * @stack: stack
  * @line_number: line number in the file
