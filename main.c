@@ -3,7 +3,7 @@
  * main - main function
  * @argc: size of arguments
  * @argv: array of arguments
- * Return: void
+ * Return: success or failure
  */
 int main(int argc, char *argv[])
 {
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	while (getline(&line, &sz, fptr) != -1)
 	{
 		line_number++;
-		opcode = strtok(line, " \t\n");
+		opcode = strtok(line, "\n\t\r ");
 		if (opcode != NULL && opcode[0] != '#')
 		{
 			funct_opcode(&stack, line_number, opcode);
