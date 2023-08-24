@@ -8,13 +8,14 @@
  */
 void swap_stack(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp1, *temp2;
+	stack_t *current, *temp1, *temp2;
 	int count = 0;
 
-	while (*stack != NULL)
+	current = *stack;
+	while (current != NULL)
 	{
 		count++;
-		*stack = (*stack)->next;
+		current = current->next;
 	}
 	if (count < 2)
 	{
