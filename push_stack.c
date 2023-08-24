@@ -26,15 +26,8 @@ void push_stack(stack_t **stack, unsigned int line_number)
 	n = atoi(arg);
 	new->n = n;
 	new->prev = NULL;
-	if (*stack == NULL)
-	{
-		new->next = NULL;
-		*stack = new;
-	}
-	else
-	{
-		new->next = *stack;
+	new->next = *stack;
+	if (*stack != NULL)
 		(*stack)->prev = new;
-		*stack = new;
-	}
+	*stack = new;
 }
